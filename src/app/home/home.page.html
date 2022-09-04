@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title id="title-ani">Lectura de Código QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg"
+  />
+  <p>{{ user.name}}</p>
+  <input
+    #fileinput
+    hidden
+    id="input-file"
+    type="file"
+    accept="image/*;capture=camera"
+    (change)="verificarArchivoConQR($event.target.files)"
+  />
+
+  <ion-button
+    (click)="cargarImagenDesdeArchivo()"
+    expand="full"
+    shape="round"
+    color="tertiary"
+  >
+    <ion-icon slot="start" name="camera"></ion-icon>
+    Cargar Imagen con Código QR
+  </ion-button>
+
+  <ion-button
+    *ngIf="!escaneando"
+    (click)="comenzarEscaneoQR()"
+    expand="full"
+    shape="round"
+    color="tertiary"
+  >
+    <ion-icon slot="start" name="videocam-outline"></ion-icon>
+    Comenzar Escaneo de QR
+  </ion-button>
+
+  <ion-button
+    *ngIf="escaneando"
+    (click)="detenerEscaneoQR()"
+    expand="full"
+    shape="round"
+    color="tertiary"
+  >
+    <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+    Detener escaneo de QR
+  </ion-button>
+
+  <ion-button
+    (click)="limpiarDatos()"
+    expand="block"
+    expand="full"
+    shape="round"
+    color="tertiary"
+  >
+    <ion-icon slot="start" name="trash-outline"></ion-icon>
+    Limpiar datos
+  </ion-button>
+
+  <video #video [hidden]="!escaneando" width="100%"></video>
+  <canvas #canvas hidden></canvas>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Código QR</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <br />
+      Datos: {{ datosQR }}
+      <br /><br />
+      Escaneando: {{ escaneando }}
+      <br />
+    </ion-card-content>
+  </ion-card>
+</ion-content>

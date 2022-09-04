@@ -1,0 +1,26 @@
+<ion-content>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg"
+    id="image-aim"
+  />
+  <ion-title>sistema de asistencia duoc</ion-title>
+  <ion-card class="card-container">
+    <ion-card-content class="card-content-container">
+      <ion-item>
+        <ion-input
+          type="email"
+          placeholder="ingrese su email"
+          [(ngModel)]="user.email"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          type="password"
+          placeholder="ingrese su contraseña"
+          [(ngModel)]="user.password"
+        ></ion-input>
+      </ion-item>
+      <ion-button shape="block" (click)="ingressToApp()">enviar</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
