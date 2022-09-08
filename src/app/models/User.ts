@@ -56,7 +56,11 @@ export class User {
       (usu) => usu.email === email && usu.password === password
     );
   }
-
+  public buscarUsuarioPorCorreo(email: string,): User {
+    return this.listaUsuariosValidos().find(
+      (usu) => usu.email === email
+    );
+  }
   public validateEmail(): string {
     if (this.email.trim() === '') {
       return 'Para ingresar al sistema debe ingresar un nombre de usuario.';

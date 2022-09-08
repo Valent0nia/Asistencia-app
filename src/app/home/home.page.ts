@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 import { AnimationController, LoadingController } from '@ionic/angular';
 import jsQR, { QRCode } from 'jsqr';
 import { User } from '../models/User';
@@ -27,6 +28,7 @@ export class HomePage implements AfterViewInit {
   public constructor(
     private loadingController: LoadingController,
     private router: Router,
+    private alertController: AlertController,
     private animationCtrl: AnimationController
   ) {
     if (router.getCurrentNavigation().extras?.state?.user) {

@@ -20,7 +20,12 @@
           [(ngModel)]="user.password"
         ></ion-input>
       </ion-item>
-      <ion-button shape="block" (click)="ingressToApp()">enviar</ion-button>
+      <ion-button shape="block" color="primary" (click)="ingressToApp()">enviar</ion-button>
     </ion-card-content>
-  </ion-card>
+  
+<ion-label>
+  <br>
+  <a (click)="ingresarPaginaValidarCorreo()">Recuperar Contraseña</a>
+</ion-label>
+</ion-card>
 </ion-content>

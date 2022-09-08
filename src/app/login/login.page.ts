@@ -72,4 +72,7 @@ export class LoginPage implements OnInit, AfterViewInit {
     });
     toast.present();
   }
+public ingresarPaginaValidarCorreo():void{
+  this.router.navigate(['/correo']);
+}
 }

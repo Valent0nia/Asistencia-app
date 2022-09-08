@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="tertiary">
+  <ion-toolbar color="primary">
     <ion-title id="title-ani">Lectura de Código QR</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -18,43 +18,43 @@
   />
 
   <ion-button
+    color="primary"
     (click)="cargarImagenDesdeArchivo()"
     expand="full"
     shape="round"
-    color="tertiary"
   >
     <ion-icon slot="start" name="camera"></ion-icon>
     Cargar Imagen con Código QR
   </ion-button>
 
   <ion-button
+    color="primary"
     *ngIf="!escaneando"
     (click)="comenzarEscaneoQR()"
     expand="full"
     shape="round"
-    color="tertiary"
   >
     <ion-icon slot="start" name="videocam-outline"></ion-icon>
     Comenzar Escaneo de QR
   </ion-button>
 
   <ion-button
+    color="primary"
     *ngIf="escaneando"
     (click)="detenerEscaneoQR()"
     expand="full"
     shape="round"
-    color="tertiary"
   >
     <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
     Detener escaneo de QR
   </ion-button>
 
   <ion-button
+    color="primary"
     (click)="limpiarDatos()"
     expand="block"
     expand="full"
     shape="round"
-    color="tertiary"
   >
     <ion-icon slot="start" name="trash-outline"></ion-icon>
     Limpiar datos
